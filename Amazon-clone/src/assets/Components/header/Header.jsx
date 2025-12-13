@@ -6,6 +6,7 @@ import { DataContext } from "../DataProvider/DataProvider.jsx";
 import styles from "./header.module.css";
 import { auth } from "../../../Utility/firebase.js";
 import { GoSearch } from "react-icons/go";
+import { CiLocationOn } from "react-icons/ci";
 export default function Header() {
   const [{ user, basket }, dispatch] = useContext(DataContext);
   console.log(basket);
@@ -29,7 +30,7 @@ export default function Header() {
           {/* Location */}
           <div className={styles.header__location}>
             <span className={styles.header__locationIcon}>
-              <img src="../../../../public/location-2952.png" alt="" />
+              <CiLocationOn />
             </span>
             <div className={styles.delivered__to}>
               <span className={styles.header__smallText}>Deliver to</span>

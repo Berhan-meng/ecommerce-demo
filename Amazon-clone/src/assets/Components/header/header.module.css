@@ -44,13 +44,6 @@
   font-size: 20px;
   margin-right: 5px;
 }
-.header__locationIcon img {
-  width: 17px;
-  height: 15px;
-  border-radius: 2px;
-  background-position: -71px -378px;
-  background-color: #f3f3f3;
-}
 .delivered__to {
   display: flex;
   flex-direction: column;
