@@ -1,11 +1,11 @@
 @media screen and (max-width: 576px) {
   /* Main header */
-  .header {
+  /* .header {
     display: flex;
     flex-direction: column;
     height: auto;
     padding: 10px;
-  }
+  } */
 
   /* Hide the menu list, keep only icon + All */
   .lowerHeader__list {
@@ -22,3 +22,12 @@
     width: 100%;
   }
 }
+.light {
+  background-color: #fff;
+  color: blue;
+}
+.dark {
+  background-color: black;
+  color: bisque;
+}
+

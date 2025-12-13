@@ -1,0 +1,35 @@
+.heroBanner {
+  width: 100%;
+  height: max-content;
+  overflow: hidden;
+  position: relative;
+}
+.heroBanner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  pointer-events: none;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .heroBanner {
+    height: 250px;
+  }
+  .heroBanner img {
+    height: 250px;
+  }
+}
+
+/* AMAZON-STYLE BOTTOM FADE */
+.bannerFadeBottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background-image: linear-gradient(to bottom, transparent, #e3e6e6);
+  z-index: 10;
+  pointer-events: none;
+}

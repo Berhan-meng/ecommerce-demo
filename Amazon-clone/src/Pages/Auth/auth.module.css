@@ -1,0 +1,236 @@
+/* Sign-in page - Amazon-like clean layout */
+:root {
+  --brand: #131921;
+  --accent: #ffd814;
+  --card-bg: #fff;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --radius: 8px;
+  --max-width: 980px;
+}
+
+/* page wrapper */
+.signin_page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #fafafa 0%, #f3f4f6 100%);
+  padding: 32px 12px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+  color: #111827;
+}
+
+/* container holds promo + form */
+.signin_container {
+  width: 100%;
+  max-width: var(--max-width);
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* left promo */
+.signin_promo {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 14px rgba(16, 24, 40, 0.04);
+}
+.signin_promo h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: var(--brand);
+}
+.signin_promo p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+.signin_promo ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+.signin_promo li {
+  margin: 6px 0;
+}
+
+/* sign-in card */
+.signin_card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 14px rgba(16, 24, 40, 0.06);
+}
+.signin_card img {
+  background-color: #ff6200;
+  border-radius: 2px;
+  padding: 5px 5px 0 5px;
+  margin: auto auto;
+  margin-left: 35%;
+}
+
+/* form */
+.signin_form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#signin_title {
+  font-size: 22px;
+  margin: 0 0 6px;
+  color: #111827;
+}
+
+/* fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.field_label {
+  font-size: 14px;
+  color: #374151;
+}
+
+.field input[type="text"],
+.field input[type="password"],
+.field input[type="email"],
+.password_row input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #b1dfe7;
+  outline: none;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+.field input[type="text"]:focus,
+.field input[type="password"]:focus,
+.field input[type="email"]:focus,
+.password_row input:focus {
+  background-color: #fff;
+}
+.password_row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.toggle_password {
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* small helper row */
+.form-row.small {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #374151;
+}
+.help_link {
+  font-size: 13px;
+  color: #007185;
+  text-decoration: none;
+}
+.help_link:hover {
+  text-decoration: underline;
+}
+
+/* buttons */
+.form_actions {
+  margin-top: 8px;
+}
+.btn_primary {
+  width: 100%;
+  background: var(--brand);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+}
+.btn_primary[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.create_account {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.btn_outline {
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #d1d5db;
+  color: #ff6200;
+  background-color: #b1dfe7;
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+/* error */
+.field_error {
+  color: #b91c1c;
+  font-size: 13px;
+  margin-top: 4px;
+}
+.signin_error {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+/* footer small text */
+.small.muted {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* responsive adjustments */
+@media (max-width: 960px) {
+  .signin-container {
+    grid-template-columns: 1fr 360px;
+    gap: 16px;
+    padding: 0 8px;
+  }
+}
+@media (max-width: 760px) {
+  .signin_container {
+    grid-template-columns: 1fr;
+  }
+  .signin_promo {
+    order: 2;
+  }
+  .signin_card {
+    order: 1;
+  }
+  .signin_card,
+  .signin_promo {
+    width: 100%;
+  }
+}
