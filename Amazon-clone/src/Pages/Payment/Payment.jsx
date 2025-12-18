@@ -3,17 +3,16 @@ import { DataContext } from "../../assets/Components/DataProvider/DataProvider.j
 import "./payment.css";
 import ProductCard from "../../assets/Components/Product/ProductCard.jsx";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
-// import { BiCloudLightning } from "react-icons/bi";
 import { formatMoney } from "../../Utility/Money.js";
 import { Type } from "../../Utility/action.type.js";
 import { instance } from "../../Api/axios.js";
 import { ClipLoader } from "react-spinners";
 import { db } from "../../Utility/firebase.js";
 import { useNavigate } from "react-router-dom";
-// import CheckoutForm from "../../assets/Components/stripe/CheckoutForm.jsx";
+import Layout from "../../assets/Components/Layout/Layout.jsx";
 
 export default function Payment() {
-  const [{ user, basket },dispatch] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
   // console.log(user);
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;

@@ -6,7 +6,7 @@ export default function ComponentA() {
   return (
     <div>
         <h1>Componeent A</h1>
-      <button onClick={colorToggler()}>Color Toggler</button>
+      <button onClick={colorToggler}>Color Toggler</button>
     </div>
   );
 }

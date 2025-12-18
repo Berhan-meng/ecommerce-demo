@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
-import "./Product.css";
-import Spinnner from "../../../Pages/Spinner";
 import { FadeLoader } from "react-spinners";
+import styles from "./Product.module.css";
+import { producturl } from "../../../Api/endPoint";
 
 export default function Product() {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://fakestoreapi.com/products")
+      .get(`${producturl}/products`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -19,13 +19,14 @@ export default function Product() {
   }
 
   return (
-    <section className="productContainer">
-      {product.map((singleItem) => (
+    <section className={styles.productContainer}>
+      {product?.map((singleItem) => (
         <ProductCard
           key={singleItem.id}
           product={singleItem}
           renderDesc={false}
           renderAdd={true}
+          enableHover={true}
         />
       ))}
     </section>

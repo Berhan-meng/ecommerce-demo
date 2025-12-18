@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+:root {
+  --primary-color: #febd69;
+  --primary-shade: #b49644;
+  --brand: #131921;
+  --accent: #ffd814;
+  --card-bg: #fff;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --radius: 8px;
+  --max-width: 980px;
+}
+

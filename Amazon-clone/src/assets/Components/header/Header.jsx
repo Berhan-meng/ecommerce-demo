@@ -67,13 +67,6 @@ export default function Header() {
             />
             <select className={styles.header__langSelect}>
               <option>EN</option>
-              {/* <option>español - ES - Traducción</option>
-              <option>العربية - AR </option>
-              <option>Deutsch - DE</option>
-              <option>Übersetzung עברית </option>
-              <option>תרגום 한국어</option>
-              <option>português - PT</option>
-              <option>Tradução 中文</option> */}
             </select>
           </div>
 

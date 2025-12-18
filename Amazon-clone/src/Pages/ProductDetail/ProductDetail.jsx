@@ -1,59 +1,44 @@
 import axios from "axios";
+import Rating from "@mui/material/Rating";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { producturl } from "../../Api/endPoint";
-import "./productDetail.css";
+import styles from "./productDetail.module.css";
 import Spinnner from "../Spinner";
-import { FadeLoader } from "react-spinners";
-
+import { AddToCart } from "../../Utility/addToCart";
+// import { FadeLoader } from "react-spinners";
+import Layout from "../../assets/Components/Layout/Layout";
+import ProductCard from "../../assets/Components/Product/ProductCard";
 export default function ProductDetail() {
   const { productId } = useParams();
-  const [productDetail, setProductDetail] = useState(null);
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
     axios
       .get(`${producturl}/products/${productId}`)
-      .then((res) => setProductDetail(res.data))
+      .then((res) => setProduct(res.data))
       .catch((err) => console.log(err));
   }, [productId]);
 
-  if (!productDetail) {
+  if (!product) {
     return (
-      //  <FadeLoader />
+      // <FadeLoader />
       <Spinnner />
     );
   }
 
   return (
-    <section className="pd-container">
-      {/* LEFT IMAGE SECTION */}
-      <div className="pd-image-box">
-        <img src={productDetail.image} alt={productDetail.title} />
-      </div>
-
-      {/* MIDDLE CONTENT */}
-      <div className="pd-content">
-        <h2 className="pd-title">{productDetail.title}</h2>
-
-        <p className="pd-rating">
-          ⭐ {productDetail.rating?.rate}
-          <span className="pd-rating-count">
-            ({productDetail.rating?.count} reviews)
-          </span>
-        </p>
-
-        <h3 className="pd-price">$ {productDetail.price}</h3>
-
-        <p className="pd-description">{productDetail.description}</p>
-      </div>
-
-      {/* RIGHT SIDE BUY BOX */}
-      <div className="pd-buy-box">
-        <h3 className="pd-price-large">$ {productDetail.price}</h3>
-
-        <button className="pd-btn-add">Add to Cart</button>
-        <button className="pd-btn-buy">Buy Now</button>
-      </div>
-    </section>
+    <Layout>
+      <section className={styles.pd__container}>
+        <ProductCard
+          product={product}
+          key={product.id}
+          renderDesc={true}
+          renderAdd={true}
+          flex={true}
+          enableHover={true}
+        />
+      </section>
+    </Layout>
   );
 }

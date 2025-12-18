@@ -8,13 +8,9 @@ import { reducer, initialState } from "./Utility/reducer.js";
 import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
-  // <DataProvider value={reducer} initialState={initialState}>
-  //   <StrictMode>
-  //     <App />
-  //   </StrictMode>
-  // </DataProvider>
-
   <DataProvider value={reducer} initialState={initialState}>
-    <App />
+    <StrictMode>
+      <App />
+    </StrictMode>
   </DataProvider>
 );

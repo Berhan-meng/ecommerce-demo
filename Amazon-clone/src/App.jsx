@@ -28,6 +28,10 @@ function App() {
   }, []);
 
   return <Routing />;
+  // <ThemeProvider>
+  //   <ComponentA />
+  //   <ComponentB />
+  // </ThemeProvider>
 }
 
 export default App;

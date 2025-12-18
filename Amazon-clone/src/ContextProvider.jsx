@@ -6,9 +6,7 @@ export const useColor = () => {
 export const ThemeProvider = ({ children }) => {
   const [color, setColor] = useState(`light`);
   const colorToggler = () => {
-    setColor((pre) => {
-      pre === `light` ? `dark` : `light`;
-    });
+    setColor((prev) => (prev === "light" ? "dark" : "light"));
   };
   return (
     <colorContext.Provider value={{ color, colorToggler }}>

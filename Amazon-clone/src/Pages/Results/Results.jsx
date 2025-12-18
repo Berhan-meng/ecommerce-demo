@@ -4,9 +4,9 @@ import { producturl } from "../../Api/endPoint";
 import { useEffect, useState } from "react";
 import ProductCard from "../../assets/Components/Product/ProductCard";
 import Layout from "../../assets/Components/Layout/Layout";
-import "./results.css";
 import Spinnner from "../Spinner";
-import { fabClasses } from "@mui/material/Fab";
+// import { fabClasses } from "@mui/material/Fab";
+import styles from "./results.module.css";
 
 export default function Results() {
   const [results, setResults] = useState([]);
@@ -25,14 +25,14 @@ export default function Results() {
   return (
     <Layout>
       <h2>Results for: {categoryName}</h2>
-      <div className="category-page">
+      <div className={styles.category__page}>
         {results.map((item) => (
-          <ProductCard key={item.id} product={item} renderDesc={false} renderAdd={true} />
-          //   <div key={item.id}>
-          //     <h3>{item.title}</h3>
-          //     <img src={item.image} width={150} />
-          //     <p>${item.price}</p>
-          //   </div>
+          <ProductCard
+            key={item.id}
+            product={item}
+            renderDesc={false}
+            renderAdd={true}
+          />
         ))}
       </div>
     </Layout>
