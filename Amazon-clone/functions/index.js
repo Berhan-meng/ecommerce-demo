@@ -35,12 +35,11 @@ app.post("/payment/create", async (req, res) => {
     });
     console.log(paymentIntent);
     res.status(201).json({
-      clientSecret:paymentIntent.client_secret,
-    
+      clientSecret: paymentIntent.client_secret,
     });
   } else {
     res.status(403).json({
-      message: "total must be greater than 0 ",
+      message: "Total must be greater than 0 ",
     });
   }
 });
