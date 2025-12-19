@@ -77,7 +77,7 @@ export default function Payment() {
           created: paymentIntent.created,
         });
 
-      // 4. Clear user basket
+      // 4. Empty basket
       dispatch({ type: Type.EMPTY_BASKET });
       setProcessing(false);
       navigate("/orders", { state: { msg: "You have placed new order" } });

@@ -31,7 +31,9 @@ export default function Orders() {
       <section className={styles.container}>
         <div className={styles.orders_container}>
           <h2>Your Orders</h2>
-          {orders.length == 0 && <div style={{padding:"20px"}}>You don't have Orders yet</div>}
+          {orders.length == 0 && (
+            <div style={{ padding: "20px" }}>You don't have Orders yet</div>
+          )}
 
           <div>
             {orders?.map((eachOrder) => (
