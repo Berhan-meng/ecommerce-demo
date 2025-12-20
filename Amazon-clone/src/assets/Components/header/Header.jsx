@@ -13,6 +13,8 @@ export default function Header() {
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
+
+  
   return (
     <>
       <header className={styles.header}>
