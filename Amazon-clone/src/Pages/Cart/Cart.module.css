@@ -6,10 +6,10 @@
   gap: 10px;
 }
 .container img {
-width: 100px !important;
-margin-top: 80px !important;
+  width: 100px !important;
+  margin-top: 80px !important;
 }
-.container div{
+.container div:not(.subtotal) {
   height: auto !important;
 }
 .product__container {
@@ -18,7 +18,6 @@ margin-top: 80px !important;
 /* ===== CART LIST SECTION ===== */
 .cart_container {
   padding: 20px;
-
 }
 .cart_container h2,
 .cart_container h3 {
