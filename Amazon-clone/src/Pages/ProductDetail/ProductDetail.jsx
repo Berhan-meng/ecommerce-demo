@@ -1,12 +1,10 @@
 import axios from "axios";
-import Rating from "@mui/material/Rating";
-import React, { useEffect, useState } from "react";
+// import Rating from "@mui/material/Rating";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { producturl } from "../../Api/endPoint";
 import styles from "./productDetail.module.css";
 import Spinnner from "../Spinner";
-import { AddToCart } from "../../Utility/addToCart";
-// import { FadeLoader } from "react-spinners";
 import Layout from "../../assets/Components/Layout/Layout";
 import ProductCard from "../../assets/Components/Product/ProductCard";
 export default function ProductDetail() {
@@ -22,7 +20,6 @@ export default function ProductDetail() {
 
   if (!product) {
     return (
-      // <FadeLoader />
       <Spinnner />
     );
   }

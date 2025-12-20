@@ -1,9 +1,12 @@
 .pd__container {
   gap: 20px;
-  padding: 30px;
+  padding: 40px;
   justify-content: center;
   align-items: center;
+  height: auto;
 }
-.pd-container div img {
-  width: 50%;
+.pd__container :global(img) {
+height: 200px;
+width: auto;
+margin: auto;
 }

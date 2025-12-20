@@ -1,5 +1,6 @@
 .productCard {
   width: 250px;
+  height: auto;
   background: #fff;
   border-radius: 10px;
   padding: 10px;
@@ -9,15 +10,6 @@
   cursor: pointer;
   color: #000;
 }
-
-/* .productCard:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-} */
-/* .productCard {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-} */
-
 /* Hover enabled ONLY when this class exists */
 .hoverable:hover {
   transform: scale(1.03);
@@ -33,14 +25,16 @@
 
 .productCard__info {
   margin-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .productCard__title {
   font-size: 14px;
   font-weight: 600;
   width: 100%;
-  /* height: 38px; */
-  /* overflow: hidden; */
 }
 
 .productCard__price {
@@ -69,6 +63,7 @@
   position: absolute;
   bottom: 0px;
   left: 10%;
+  margin-top: auto;
 }
 
 .productCard:hover .productCard__btn {

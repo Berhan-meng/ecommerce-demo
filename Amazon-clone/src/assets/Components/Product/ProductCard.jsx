@@ -2,7 +2,7 @@ import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DataContext } from "../DataProvider/DataProvider";
-import { Type } from "../../../Utility/action.type";
+// import { Type } from "../../../Utility/action.type";
 import { FadeLoader } from "react-spinners";
 import { formatMoney } from "../../../Utility/Money";
 import { AddToCart } from "../../../Utility/addToCart";

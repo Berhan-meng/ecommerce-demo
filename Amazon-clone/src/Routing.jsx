@@ -1,7 +1,5 @@
-// import { Routes, Route } from "react-router-dom";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Landing from "./Pages/Landing/Landing";
-// import Signup from "./Pages/Auth/Signup";
 import Cart from "./Pages/Cart/Cart";
 import Payment from "./Pages/Payment/Payment";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
@@ -17,7 +15,7 @@ const stripePromise = loadStripe(
 
 export default function Routing() {
   return (
-    <HashRouter >
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/auth" element={<Auth />} />
