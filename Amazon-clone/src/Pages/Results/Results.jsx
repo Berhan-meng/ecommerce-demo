@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import ProductCard from "../../assets/Components/Product/ProductCard";
 import Layout from "../../assets/Components/Layout/Layout";
 import Spinnner from "../Spinner";
-// import { fabClasses } from "@mui/material/Fab";
 import styles from "./results.module.css";
 
 export default function Results() {
@@ -21,7 +20,6 @@ export default function Results() {
   if (results.length === 0) {
     return <Spinnner />;
   }
-
   return (
     <Layout>
       <h2>Results for: {categoryName}</h2>

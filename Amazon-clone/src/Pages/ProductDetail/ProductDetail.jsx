@@ -1,5 +1,4 @@
 import axios from "axios";
-// import Rating from "@mui/material/Rating";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { producturl } from "../../Api/endPoint";

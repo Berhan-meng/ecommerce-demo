@@ -1,5 +1,4 @@
 // 423523234;
-
 import { auth } from "../../Utility/firebase";
 import { useState, useContext } from "react";
 import styles from "./auth.module.css";
@@ -28,21 +27,6 @@ export default function Auth() {
 
   // console.log(email);
   // console.log(password);
-
-  // function validate() {
-  //   const e = {};
-  //   if (!email.trim()) e.email = "Enter your email or mobile phone number";
-  //   // basic email-like check (allow phone too)
-  //   if (
-  //     email &&
-  //     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) &&
-  //     !/^\+?\d{6,}$/.test(email)
-  //   )
-  //     e.email = "Enter a valid email address or phone number";
-  //   if (!password) e.password = "Enter your password";
-  //   setGeneralError(e);
-  //   return Object.keys(e).length === 0;
-  // }
 
   async function handleSubmit(e) {
     e.preventDefault();
