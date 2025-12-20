@@ -1,9 +1,9 @@
 .productCard {
-  width: 250px;
+  width: 260px;
   height: auto;
   background: #fff;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   position: relative;
@@ -57,13 +57,13 @@
   border: 1px solid #a88734;
   cursor: pointer;
   background: var(--primary-color);
-  width: 80%;
-  margin: 10px 0;
+  width: 70%;
+  margin: 5px 0;
   border-radius: 30px;
-  position: absolute;
+  position: static;
   bottom: 0px;
-  left: 10%;
-  margin-top: auto;
+  left: 18%;
+  margin: auto;
 }
 
 .productCard:hover .productCard__btn {
@@ -83,25 +83,26 @@
 }
 .product__flexed {
   box-shadow: none;
-  height: 50vh;
+  height: auto;
   display: flex;
   gap: 50px;
   width: 100%;
+  align-items: center;
 }
 .product__flexed .productCard__btn {
-  display: block;
   position: static;
-  width: 150px;
-  margin-right: 40px;
+  width: 170px;
+  margin: 5px 0;
+  border-radius: 30px;
+  bottom: 0px;
+  left: 90%;
 }
 .product__flexed img {
   width: 250px !important;
   height: auto;
-  /* margin-top: 30%; */
 }
 .product__flexed h3 {
   padding: 20px 0;
-  /* font-size: 1.5rem; */
 }
 @media screen and(max-width:768p) {
   .product__flexed {

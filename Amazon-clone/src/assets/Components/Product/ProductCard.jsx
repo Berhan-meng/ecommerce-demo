@@ -29,7 +29,7 @@ export default function ProductCard({ product, renderDesc, renderAdd, flex, enab
       <div className={styles.productCard__info}>
         <h3 className={styles.productCard__title}>{title}</h3>
         <div className={styles.productCard__rating}>
-          <Rating value={rating.rate} precision={0.1} readOnly size="small" />
+          <Rating value={rating.rate} precision={0.1} size="small" />
           <span className={styles.productCard__ratingCount}>
             ({rating.count})
           </span>

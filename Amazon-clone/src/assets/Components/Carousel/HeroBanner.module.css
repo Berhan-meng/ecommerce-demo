@@ -1,9 +1,12 @@
 .heroBanner {
-  width: 100%;
-  height: max-content;
+  /* width: 100%;
+  height: fit-content;
   position: relative;
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: visible; */
+    width: 100%;
+  position: relative;
+  overflow: hidden; /* important */
 }
 .heroBanner img {
   width: 100%;
@@ -51,7 +54,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 200px;
+  height: 100px;
   background-image: linear-gradient(
     to bottom,
     rgba(225, 225, 225, 0),
