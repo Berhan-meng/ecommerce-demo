@@ -127,7 +127,6 @@ export default function Payment() {
           country: "Ethiopia",
         },
       };
-
       // 4. Save order to Firestore in a batch write (more efficient)
       const batch = db.batch();
       const orderRef = db.collection("orders").doc(paymentIntent.id);
@@ -137,6 +136,7 @@ export default function Payment() {
         .collection("orders")
         .doc(paymentIntent.id);
 
+      // Save full order data to main orders collection
       batch.set(orderRef, orderData);
       batch.set(userOrderRef, {
         orderId: paymentIntent.id,
@@ -144,6 +144,8 @@ export default function Payment() {
         amount: orderData.amount,
         amountFormatted: orderData.amountFormatted,
         status: orderData.status,
+        basket: basket, // ← THIS IS THE KEY FIX! Add the basket
+        address: orderData.address, // Optional but good to have
       });
 
       await batch.commit();

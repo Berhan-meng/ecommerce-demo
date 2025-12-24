@@ -1,3 +1,88 @@
+// import { Type } from "./action.type";
+
+// // export const initialState = {
+// //   basket: [],
+// //   user: null,
+// // };
+// export const initialState = {
+//   basket: [],
+//   user: null,
+//   authReady: false, // ✅ ADD THIS
+// };
+
+// export const reducer = (state, action) => {
+//   switch (action.type) {
+//     case Type.ADD_TO_BASKET: {
+//       const existingItem = state.basket.find(
+//         (item) => item.product.id === action.item.product.id
+//       );
+
+//       // If item does NOT exist → add new
+//       if (!existingItem) {
+//         return {
+//           ...state,
+//           basket: [...state.basket, { ...action.item, amount: 1 }],
+//         };
+//       } else {
+//         // If item exists → increase amount
+//         const updatedBasket = state.basket.map((item) =>
+//           item.product.id === action.item.product.id
+//             ? { ...item, amount: item.amount + 1 }
+//             : item
+//         );
+
+//         return {
+//           ...state,
+//           basket: updatedBasket,
+//         };
+//       }
+//     }
+
+//     case Type.REMOVE_FROM_BASKET: {
+//       const index = state.basket.findIndex(
+//         (item) => item.product.id === action.product.id
+//       );
+
+//       if (index >= 0) {
+//         const newBasket = [...state.basket];
+
+//         if (newBasket[index].amount > 1) {
+//           newBasket[index] = {
+//             ...newBasket[index],
+//             amount: newBasket[index].amount - 1,
+//           };
+//         } else {
+//           // fully remove item
+//           newBasket.splice(index, 1);
+//         }
+
+//         return {
+//           ...state,
+//           basket: newBasket,
+//         };
+//       }
+
+//       return state;
+//     }
+//     case Type.SET_USER:
+//       return {
+//         // ...state,
+//         // user: action.user,
+//         ...state,
+//         user: action.user,
+//         authReady: true, // ✅ auth is now initialized
+//       };
+//     case Type.EMPTY_BASKET:
+//       return {
+//         ...state,
+//         basket: [],
+//       };
+
+//     default:
+//       return state;
+//   }
+// };
+
 import { Type } from "./action.type";
 
 export const initialState = {
@@ -74,3 +159,4 @@ export const reducer = (state, action) => {
       return state;
   }
 };
+
