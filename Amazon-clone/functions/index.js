@@ -1,48 +1,32 @@
-import * as functions from "firebase-functions";
-import admin from "firebase-admin";
-import { onRequest } from "firebase-functions/https";
-import * as logger from "firebase-functions/logger";
-import express from "express";
-import cors from "cors";
-import { config } from "dotenv";
-import Stripe from "stripe";
+/**
+ * Import function triggers from their respective submodules:
+ *
+ * const {onCall} = require("firebase-functions/v2/https");
+ * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
+ *
+ * See a full list of supported triggers at https://firebase.google.com/docs/functions
+ */
 
-config();
+const {setGlobalOptions} = require("firebase-functions");
+const {onRequest} = require("firebase-functions/https");
+const logger = require("firebase-functions/logger");
 
-const stripe = new Stripe(process.env.STRIPE_KEY);
+// For cost control, you can set the maximum number of containers that can be
+// running at the same time. This helps mitigate the impact of unexpected
+// traffic spikes by instead downgrading performance. This limit is a
+// per-function limit. You can override the limit for each function using the
+// `maxInstances` option in the function's options, e.g.
+// `onRequest({ maxInstances: 5 }, (req, res) => { ... })`.
+// NOTE: setGlobalOptions does not apply to functions using the v1 API. V1
+// functions should each use functions.runWith({ maxInstances: 10 }) instead.
+// In the v1 API, each function can only serve one request per container, so
+// this will be the maximum concurrent request count.
+setGlobalOptions({ maxInstances: 10 });
 
-const app = express();
+// Create and deploy your first functions
+// https://firebase.google.com/docs/functions/get-started
 
-// FIXED — correct CORS usage
-app.use(cors({ origin: true }));
-
-// JSON parser
-app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.status(200).json({
-    message: "success",
-  });
-});
-
-app.post("/payment/create", async (req, res) => {
-  const total = parseInt(req.query.total);
-
-  if (total > 0) {
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: total,
-      currency: "usd",
-    });
-    console.log(paymentIntent);
-    res.status(201).json({
-      clientSecret: paymentIntent.client_secret,
-    });
-  } else {
-    res.status(403).json({
-      message: "Total must be greater than 0 ",
-    });
-  }
-});
-
-// Export your API function
-export const api = onRequest(app);
+// exports.helloWorld = onRequest((request, response) => {
+//   logger.info("Hello logs!", {structuredData: true});
+//   response.send("Hello from Firebase!");
+// });
