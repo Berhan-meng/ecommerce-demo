@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DataContext } from "../DataProvider/DataProvider";
 // import { Type } from "../../../Utility/action.type";
-import { FadeLoader } from "react-spinners";
 import { formatMoney } from "../../../Utility/Money";
-import { AddToCart } from "../../../Utility/addToCart";
+import { AddToCart } from "../../../Utility/AddToCart.js";
 import styles from "./ProductCard.module.css";
 import Spinnner from "../../../Pages/Spinner";
 
