@@ -9,9 +9,11 @@ import Auth from "./Pages/Auth/Auth";
 import ProtectedRoute from "./assets/Components/protectedRoute/ProtectedRoute";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import TermsAndPrivacy from "../src/assets/Components/Footer/TermsAndPrivacy/TermsAndPrivacy";
+import Disclaimer from "../src/assets/Components/Footer/Disclaimer/Disclaimer";
 // import Tracking from "./Pages/Tracking/Tracking.jsx";
 const stripePromise = loadStripe(
-  "pk_test_51SbkYcCerv0GlD1KpmLFmszWWEaGH0N64IMzZw787ZeATqcVfS9Bmh4FQaUd56CCj0MHsNV2k3E8tH4KLSzJznO800ytP0P176"
+  "pk_test_51SbkYcCerv0GlD1KpmLFmszWWEaGH0N64IMzZw787ZeATqcVfS9Bmh4FQaUd56CCj0MHsNV2k3E8tH4KLSzJznO800ytP0P176",
 );
 
 export default function Routing() {
@@ -48,6 +50,8 @@ export default function Routing() {
         <Route path="products/:productId" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
         {/* <Route path="/tracking/:orderId" element={<Tracking />} /> */}
+        <Route path="/terms" element={<TermsAndPrivacy />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
       </Routes>
     </HashRouter>
   );

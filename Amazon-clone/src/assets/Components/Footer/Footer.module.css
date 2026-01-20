@@ -1,0 +1,334 @@
+/* Footer.module.css */
+
+/* ===== Main Footer ===== */
+.footer {
+  position: relative;
+  padding: 2.5rem 0;
+  background-color: #212529;
+  font-family: 'Inter', sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Darker variation if needed */
+.footerDark {
+  background-color: #1a1d20;
+}
+
+/* Gradient variation */
+.footerGradient {
+  background: linear-gradient(145deg, #212529, #1a1d20);
+}
+
+/* ===== Container ===== */
+.footerContainer {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+@media (max-width: 991px) {
+  .footerContainer {
+    padding: 0 1.5rem;
+  }
+}
+
+/* ===== Footer Content ===== */
+.footerRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ===== Copyright ===== */
+.copyright {
+  font-size: 0.95rem;
+  color: #adb5bd;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .copyright {
+    text-align: left;
+  }
+}
+
+.copyrightLink {
+  color: #20c997;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.copyrightLink:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.copyrightLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #20c997;
+  transition: width 0.3s ease;
+}
+
+.copyrightLink:hover::after {
+  width: 100%;
+}
+
+/* ===== Footer Navigation ===== */
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (min-width: 992px) {
+  .footerNav {
+    justify-content: flex-end;
+  }
+}
+
+.footerNavItem {
+  position: relative;
+}
+
+/* Separator between nav items */
+.footerNavItem:not(:last-child)::after {
+  content: '•';
+  position: absolute;
+  right: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.footerNavLink {
+  color: #adb5bd;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.footerNavLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(32, 201, 151, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.footerNavLink:hover::before {
+  left: 100%;
+}
+
+.footerNavLink:hover {
+  color: #20c997;
+  background-color: rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+}
+
+/* Active state for modal triggers */
+.footerNavLink.active {
+  color: #20c997;
+  background-color: rgba(32, 201, 151, 0.1);
+}
+
+/* ===== Social Media Links (Optional) ===== */
+.footerSocial {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footerSocialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #adb5bd;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footerSocialLink:hover {
+  background-color: #20c997;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(32, 201, 151, 0.3);
+}
+
+/* ===== Back to Top Button (Optional) ===== */
+.backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #20c997;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  box-shadow: 0 4px 15px rgba(32, 201, 151, 0.4);
+}
+
+.backToTop.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.backToTop:hover {
+  background-color: #1baa80;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(32, 201, 151, 0.5);
+}
+
+/* ===== Divider Line ===== */
+.footerDivider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  margin: 2rem 0;
+}
+
+/* ===== Additional Info (Optional) ===== */
+.footerInfo {
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 991px) {
+  .footer {
+    padding: 2rem 0;
+  }
+  
+  .footerRow {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footerNav {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  
+  .footerNavItem:not(:last-child)::after {
+    right: -0.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 1.5rem 0;
+  }
+  
+  .footerNav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .footerNavItem:not(:last-child)::after {
+    display: none;
+  }
+  
+  .footerNavLink {
+    padding: 0.5rem;
+  }
+  
+  .backToTop {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ===== Animation ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ===== Modal Content Styles (For Terms & Disclaimer) ===== */
+.modalContent {
+  background-color: #212529;
+  color: #adb5bd;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.modalHeader {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+}
+
+.modalTitle {
+  color: white;
+  font-weight: 600;
+}
+
+.modalBody {
+  padding: 1.5rem;
+  line-height: 1.7;
+}
+
+.modalClose {
+  color: #adb5bd;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.modalClose:hover {
+  color: white;
+  opacity: 1;
+}
