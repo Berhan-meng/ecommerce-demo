@@ -6,7 +6,7 @@ const TermsAndPrivacy = () => {
 
   return (
     <section style={{ padding: "2rem", maxWidth: "1000px", margin: "0 auto" }}>
-      <h1>Amazon Clone – Terms & Conditions and Privacy Policy</h1>
+      <h1>E-Commerce demo – Terms & Conditions and Privacy Policy</h1>
       <p>
         <strong>Effective Date:</strong> {new Date().toLocaleDateString()}
       </p>
@@ -15,7 +15,7 @@ const TermsAndPrivacy = () => {
 
       <h2>1. Acceptance of Terms</h2>
       <p>
-        By accessing or using this Amazon Clone project, you agree to the
+        By accessing or using this E-commerce project, you agree to the
         following terms and conditions.
       </p>
 
@@ -79,8 +79,8 @@ const TermsAndPrivacy = () => {
 
       <h2>1. Data Collection</h2>
       <p>
-        This Amazon Clone project may collect the following information if you
-        use features such as registration or contact forms:
+        This E-Commerce Demo project may collect the following information if
+        you use features such as registration or contact forms:
       </p>
 
       <ul>
@@ -126,8 +126,8 @@ const TermsAndPrivacy = () => {
 
       <h3>Contact</h3>
       <p>
-        For questions about this Amazon Clone project, please contact me through
-        my portfolio website:{" "}
+        For questions about this E-Commerce Demo project, please contact me
+        through my portfolio website:{" "}
         <a
           href="https://www.birhann.com"
           target="_blank"

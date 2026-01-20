@@ -23,7 +23,7 @@ export default function Auth() {
   const [{ user }, dispatch] = useContext(DataContext);
 
   const navStateData = useLocation();
-  console.log(navStateData)
+  console.log(navStateData);
 
   // console.log(email);
   // console.log(password);
@@ -68,21 +68,6 @@ export default function Auth() {
     // <Layout>
     <div className={styles.signin__page}>
       <div className={styles.signin__container}>
-        {/* Left promo / help column */}
-        {/* <aside className={`${styles.signin__promo} ${styles.aria__hidden}`}>
-            <h2>Welcome to Amazon</h2>
-            <p>
-              Sign in to continue shopping, view orders, and manage your
-              account.
-            </p>
-            <ul>
-              <li>Fast checkout</li>
-              <li>Track your orders</li>
-              <li>Manage addresses & payments</li>
-            </ul>
-          </aside> */}
-
-        {/* Sign-in card */}
         <main
           className={styles.signin__card}
           role="main"
@@ -92,7 +77,7 @@ export default function Auth() {
           <Link to="/">
             <img
               src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-              alt="amazon logo"
+              alt="logo"
               className={styles.header__logo}
             />
           </Link>
@@ -186,7 +171,7 @@ export default function Auth() {
                 {loading.signUp ? (
                   <SyncLoader color="#000" size={10} />
                 ) : (
-                  "Create your Amazon account"
+                  "Create your E-Commerce Demo account"
                 )}
               </a>
             </div>

@@ -3,7 +3,7 @@ import React from "react";
 const Disclaimer = () => {
   return (
     <section style={{ padding: "2rem", maxWidth: "1000px", margin: "0 auto" }}>
-      <h1>Amazon Clone Project Disclaimer</h1>
+      <h1>E-Commerce Project Disclaimer</h1>
       <p>
         <strong>Effective Date:</strong> {new Date().toLocaleDateString()}
       </p>
@@ -12,7 +12,7 @@ const Disclaimer = () => {
 
       <h2>Project Purpose</h2>
       <p>
-        This Amazon Clone project has been created strictly for
+        This E-Commerce Demo project has been created strictly for
         <strong>
           {" "}
           educational, learning, and portfolio demonstration purposes only.

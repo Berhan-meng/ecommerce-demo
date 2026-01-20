@@ -24,7 +24,7 @@ export default function Header() {
           <Link to="/">
             <img
               src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-              alt="amazon logo"
+              alt="logo"
               className={styles.header__logo}
             />
           </Link>

@@ -12,6 +12,8 @@ import Layout from "../../assets/Components/Layout/Layout.jsx";
 import { toast } from "react-toastify";
 import styles from "./payment.module.css";
 
+// Demo payment page
+
 export default function Payment() {
   const [{ user, basket }, dispatch] = useContext(DataContext);
   const [cardError, setCardError] = useState(null);
