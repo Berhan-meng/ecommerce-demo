@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+// E-commerce demo store for educational purpose only
 import { producturl } from "../../Api/endPoint";
 import styles from "./productDetail.module.css";
 import Spinnner from "../Spinner";

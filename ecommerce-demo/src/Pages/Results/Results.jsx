@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
+//// E-commerce demo store for educational purpose only
 import { producturl } from "../../Api/endPoint";
 import { useEffect, useState } from "react";
 import ProductCard from "../../assets/Components/Product/ProductCard";

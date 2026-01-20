@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
 import styles from "./Product.module.css";
+// E-commerce demo store for educational purpose only
 import { producturl } from "../../../Api/endPoint";
 import Spinnner from "../../../Pages/Spinner";
 
